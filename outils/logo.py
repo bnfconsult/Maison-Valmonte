@@ -231,7 +231,10 @@ def main():
         partie('nom', [e], 'nom-%d.png' % i)
     for i, e in enumerate(sorted(tirets, key=lambda e: e['cx']), 1):
         partie('tiret', [e], 'tiret-%d.png' % i)
-    partie('monogramme', monogramme, 'monogramme.png')
+    # Le monogramme VM : une image par lettre, pour les construire l'une après l'autre ;
+    # triées de haut en bas : le V (au-dessus) puis le M
+    for i, e in enumerate(sorted(monogramme, key=lambda e: e['b'][1]), 1):
+        partie('monogramme', [e], 'monogramme-%d.png' % i)
     partie('signature', signature, 'signature.png')
 
     # 5. Logo complet en noir et en blanc.

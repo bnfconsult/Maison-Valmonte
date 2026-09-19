@@ -871,14 +871,21 @@
           anim(b, [{ transform: 'scaleX(0)' }, { transform: 'scaleX(1)' }],
             { duration: 650, delay: 1350, easing: LENT, fill: 'both' });
         });
-        parties.monogramme.forEach(function (b) {
-          anim(b, [{ opacity: 0, transform: 'scale(0.9)' }, { opacity: 1, transform: 'none' }],
-            { duration: 700, delay: 1400, easing: LENT, fill: 'both' });
-        });
+        // Le monogramme VM vient en dernier (voir l'étape 6 plus bas)
         // 5. La signature s'écrit de gauche à droite
         parties.signature.forEach(function (b) {
           anim(b, [{ clipPath: 'inset(0% 100% 0% 0%)' }, { clipPath: 'inset(0% 0% 0% 0%)' }],
             { duration: 800, delay: 1550, easing: 'cubic-bezier(.45,.05,.3,1)', fill: 'both' });
+        });
+
+        // 6. Une fois tout le reste en place, le monogramme VM se construit lentement :
+        //    le V se trace de haut en bas, puis le M de gauche à droite.
+        var DEBUT_VM = 2300;
+        parties.monogramme.forEach(function (b, i) {
+          anim(b, [
+            { clipPath: i === 0 ? 'inset(0% 0% 100% 0%)' : 'inset(0% 100% 0% 0%)', opacity: 0.4 },
+            { clipPath: 'inset(0% 0% 0% 0%)', opacity: 1 }
+          ], { duration: 1000, delay: DEBUT_VM + i * 550, easing: 'cubic-bezier(.45,.05,.25,1)', fill: 'both' });
         });
 
         // Fin de la construction du logo
@@ -886,7 +893,7 @@
         var FIN, DISPARITION_PASSER;
         if (modeDefile) {
           // 6. Le logo reste entier un instant, bien visible, puis s'efface doucement
-          var EFFACEMENT = FIN_LOGO + 850;
+          var EFFACEMENT = FIN_LOGO + 750;
           anim(logo, [
             { opacity: 1, transform: 'scale(1)', filter: 'blur(0px)' },
             { opacity: 0, transform: 'scale(0.96)', filter: flou }
