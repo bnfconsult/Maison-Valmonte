@@ -25,4 +25,7 @@ Les photos en pleine résolution (dossiers `originaux/`) restent sur l'ordinateu
 
 ## Mise en ligne
 
-Importer ce dépôt dans Vercel en choisissant `site` comme dossier racine (Root Directory).
+Le site est publié par GitHub Pages : **https://bnfconsult.github.io/Maison-Valmonte/**
+
+Chaque envoi sur la branche `main` republie automatiquement le dossier `site`
+(`.github/workflows/publier-site.yml`), en une à deux minutes.
