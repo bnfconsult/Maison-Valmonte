@@ -86,6 +86,13 @@ window.CATALOGUE = {
       presentations: ['luminaires/presentation-lampe-1920.jpg'],
       description: "Une lampe de table au charme des années 1920 : dôme d'opaline crème cerclé de laiton, colonne de bois sombre, cheminée de verre. Allumée, elle diffuse une lumière douce et dorée.",
       details: [['Matières', 'Laiton, bois, opaline et verre']]
+    },
+    {
+      ref: 'lampe-buche', nom: 'Lampe Bûche',
+      categorie: 'luminaires', type: 'photo', statut: 'disponible', prix: null, // prix à confirmer
+      photo: 'luminaires/lampe-buche.jpg', vignette: 'luminaires/vignettes/lampe-buche.jpg',
+      description: "Un pied taillé dans un tronc de bois brut, aux veines profondes et aux formes laissées libres, coiffé d'un abat-jour de lin naturel. Une lampe sculpture, chaleureuse, qui fait entrer la matière du bois au cœur de la pièce.",
+      details: [['Matières', 'Bois massif, lin et laiton']]
     }
   ]
 };
