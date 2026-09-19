@@ -1,0 +1,8 @@
+# macOS
+.DS_Store
+
+# Photos d'origine en pleine résolution : gardées sur l'ordinateur, jamais publiées
+**/originaux/
+
+# Réglages locaux de l'aperçu Claude
+.claude/

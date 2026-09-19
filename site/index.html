@@ -1,0 +1,297 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Collection — Maison Valmonte</title>
+  <meta name="description" content="Maison Valmonte, maison d'exception : objets, mobilier et œuvres d'art choisis pour des intérieurs singuliers.">
+  <meta name="robots" content="noindex">
+  <!-- Aperçu des liens partagés (passer l'image en adresse absolue une fois le domaine connu) -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Maison Valmonte">
+  <meta property="og:title" content="Maison Valmonte — Objets et œuvres d'exception">
+  <meta property="og:description" content="Objets, mobilier et œuvres d'art choisis pour des intérieurs singuliers.">
+  <meta property="og:image" content="assets/images/marque/og-valmonte.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/images/marque/favicon-32.png">
+  <link rel="icon" type="image/png" sizes="48x48" href="assets/images/marque/favicon-48.png">
+  <link rel="apple-touch-icon" href="assets/images/marque/apple-touch-icon.png">
+  <script>
+    /* Intro de première visite : décidée avant le premier affichage (aucun flash du site). */
+    (function () {
+      var REJOUER_A_CHAQUE_CHARGEMENT = true; // phase de test ; en production : false = une seule fois par visiteur
+      var FOND = 'noir';   // fond de l'intro : 'noir' (logo blanc) ou 'blanc' (logo noir) ; ?intro=blanc pour essayer
+      var MODE = 'defile'; // 'defile' (les pièces défilent puis rejoignent la collection) ou 'miniature' ; ?intro=miniature
+      try {
+        var d = document.documentElement;
+        if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+        if (location.hash) return; // lien direct vers une section : on entre sans intro
+        var forcer = /[?&]intro\b/.test(location.search);
+        if (!REJOUER_A_CHAQUE_CHARGEMENT && !forcer && localStorage.getItem('intro-vue')) return;
+        d.setAttribute('data-intro', (location.search.match(/[?&]intro=(noir|blanc)/) || [])[1] || FOND);
+        d.setAttribute('data-intro-mode', (location.search.match(/[?&]intro=(defile|miniature)/) || [])[1] || MODE);
+        d.classList.add('avec-intro');
+        // Filet de sécurité : si le script de l'intro ne démarre pas, le site s'affiche quand même.
+        window.__introSecours = setTimeout(function () { d.classList.remove('avec-intro'); }, 8000);
+      } catch (e) { /* stockage indisponible : pas d'intro */ }
+    })();
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=EB+Garamond:ital,wght@0,400;0,500;1,400&display=swap">
+  <link rel="stylesheet" href="assets/css/styles.css?v=10">
+</head>
+<body>
+  <a class="lien-evitement" href="#contenu">Aller au contenu</a>
+
+  <div class="site">
+    <header class="entete" id="entete">
+      <div class="entete-inner">
+        <button class="bouton-icone bouton-menu" type="button" aria-expanded="false" aria-controls="menu-mobile" aria-label="Ouvrir le menu">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" aria-hidden="true"><path d="M3 7h18M3 12h18M3 17h18"/></svg>
+        </button>
+        <a class="logo" href="index.html">
+          <img class="logo-marque" src="assets/images/marque/valmonte-logo-noir.png" width="1352" height="877" alt="Maison Valmonte, accueil">
+        </a>
+        <nav class="nav-principale" aria-label="Navigation principale">
+          <ul>
+            <li><a href="#collection" aria-current="page">Collection</a></li>
+            <li><a href="#univers">Catégories</a></li>
+            <li><a href="#maison">La Maison</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </nav>
+        <div class="entete-actions">
+          <a class="bouton-icone" href="#" data-lien-selection aria-label="Ma sélection : 0 pièce">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" aria-hidden="true"><path d="M5 8h14l-1 13H6L5 8z"/><path d="M9 8V6a3 3 0 0 1 6 0v2"/></svg>
+            <span class="compteur" data-compteur aria-hidden="true">(0)</span>
+          </a>
+        </div>
+      </div>
+    </header>
+
+    <main id="contenu">
+      <section class="hero-collection" aria-labelledby="titre-collection">
+        <div class="hero-texte">
+          <p class="surtitre">Collection</p>
+          <h1 id="titre-collection">Objets d'exception</h1>
+          <span class="filet-court" aria-hidden="true"></span>
+          <p class="capitales">Matières nobles. Intérieurs singuliers.</p>
+          <p class="chapo">Une sélection d'objets rares, façonnés par le temps, pour sublimer les espaces de vie d'aujourd'hui.</p>
+        </div>
+        <div class="hero-devise">
+          <p class="hero-devise-phrase">Des objets d'exception<br>pour une vie plus belle.</p>
+          <span class="filet-court" aria-hidden="true"></span>
+          <p class="hero-devise-mots">Art · Matière · Équilibre · Intérieurs · Intemporels</p>
+        </div>
+      </section>
+
+      <section id="collection" aria-label="Pièces de la collection">
+        <div class="filtres">
+          <div class="filtres-inner">
+            <span class="filtres-label" id="label-categories">Catégories :</span>
+            <div class="pastilles" role="group" aria-labelledby="label-categories" data-pastilles></div>
+            <div class="tri">
+              <label class="filtres-label" for="tri">Trier par :</label>
+              <select id="tri">
+                <option value="selection">Notre sélection</option>
+                <option value="prix-asc">Prix croissant</option>
+                <option value="prix-desc">Prix décroissant</option>
+              </select>
+              <p class="compte" aria-live="polite" data-compte></p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Les cartes sont construites à partir de assets/js/catalogue.js -->
+        <ul class="grille-produits" data-grille></ul>
+        <p class="grille-vide" data-vide hidden>De nouvelles pièces rejoindront bientôt cet univers.</p>
+      </section>
+
+      <section class="univers theme-sombre" id="univers" aria-labelledby="titre-univers">
+        <div class="univers-tete">
+          <div>
+            <p class="surtitre">L'art d'habiter autrement</p>
+            <h2 class="univers-titre" id="titre-univers">Catégories</h2>
+            <p class="capitales">Explorez nos univers</p>
+            <span class="filet-court" aria-hidden="true"></span>
+          </div>
+          <div>
+            <p class="univers-accroche">Des objets d'exception<br>pour des intérieurs singuliers.</p>
+            <span class="filet-court" aria-hidden="true"></span>
+          </div>
+          <ul class="mots-verticaux" aria-hidden="true"><li>Matières</li><li>Formes</li><li>Émotions</li></ul>
+        </div>
+
+        <div class="univers-grille">
+          <a class="carte-univers" href="#collection" data-filtre-lien="objets">
+            <img src="assets/images/univers/objets.jpg" alt="" width="261" height="333" loading="lazy">
+            <span class="carte-univers-texte">
+              <span class="carte-univers-titre">Objets</span>
+              <span class="carte-univers-accroche">La matière sculptée</span>
+              <span class="lien-fleche">Découvrir</span>
+            </span>
+          </a>
+          <a class="carte-univers" href="#collection" data-filtre-lien="vases">
+            <img src="assets/images/univers/vases.jpg" alt="" width="262" height="333" loading="lazy">
+            <span class="carte-univers-texte">
+              <span class="carte-univers-titre">Vases</span>
+              <span class="carte-univers-accroche">Des formes singulières</span>
+              <span class="lien-fleche">Découvrir</span>
+            </span>
+          </a>
+          <a class="carte-univers" href="#collection" data-filtre-lien="luminaires">
+            <img src="assets/images/univers/luminaires.jpg" alt="" width="261" height="333" loading="lazy">
+            <span class="carte-univers-texte">
+              <span class="carte-univers-titre">Luminaires</span>
+              <span class="carte-univers-accroche">Illuminer vos émotions</span>
+              <span class="lien-fleche">Découvrir</span>
+            </span>
+          </a>
+          <a class="carte-univers" href="#collection" data-filtre-lien="mobilier">
+            <img src="assets/images/univers/mobilier.jpg" alt="" width="260" height="333" loading="lazy">
+            <span class="carte-univers-texte">
+              <span class="carte-univers-titre">Mobilier</span>
+              <span class="carte-univers-accroche">Le confort en majesté</span>
+              <span class="lien-fleche">Découvrir</span>
+            </span>
+          </a>
+          <a class="carte-univers carte-univers--tableau" href="#collection" data-filtre-lien="art">
+            <img src="assets/produits/arome/vignettes/arome-supporte-moi.jpg" alt="" width="597" height="800" loading="lazy">
+            <span class="carte-univers-texte">
+              <span class="carte-univers-titre">Art mural</span>
+              <span class="carte-univers-accroche">Des histoires à contempler</span>
+              <span class="lien-fleche">Découvrir</span>
+            </span>
+          </a>
+        </div>
+      </section>
+
+      <!-- La Maison : la photo à gauche, sur toute la hauteur ; la présentation et le contact à droite -->
+      <section class="maison" id="maison" aria-labelledby="titre-maison">
+        <div class="maison-visuel">
+          <img src="assets/images/ambiance/la-maison-valmonte.jpg" width="1122" height="1402" loading="lazy"
+               alt="Un intérieur Maison Valmonte : lampe, fauteuil en cuir et table en travertin, ouvert sur un village de campagne">
+        </div>
+        <div class="maison-contenu">
+          <h2 class="maison-titre" id="titre-maison">La Maison</h2>
+          <p class="maison-nom">Maison Valmonte</p>
+          <span class="filet-court" aria-hidden="true"></span>
+          <p class="maison-recit">Installée au cœur de la campagne française, Maison Valmonte sélectionne et vend des pièces d'exception depuis 2000&nbsp;: œuvres d'art, luminaires, mobilier et objets choisis pour leur matière, leur histoire et leur présence.</p>
+          <p class="maison-recit">Plus de vingt ans d'expertise au service d'une même idée&nbsp;: des pièces rares, pensées pour habiter durablement les intérieurs d'aujourd'hui.</p>
+          <a class="lien-trait" href="#collection">Découvrir la collection</a>
+
+          <div class="maison-contact" id="contact">
+            <h3 class="maison-titre">Contact</h3>
+            <p class="maison-recit">Une pièce vous intéresse, vous cherchez un conseil&nbsp;? Appelez-nous, nous vous répondons personnellement.</p>
+            <a class="bouton-appel" href="#" data-appel>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" aria-hidden="true"><path d="M6.6 3.5h2.8l1.4 4.2-2 1.4a12.5 12.5 0 0 0 6.1 6.1l1.4-2 4.2 1.4v2.8a2 2 0 0 1-2.2 2A17 17 0 0 1 4.6 5.7a2 2 0 0 1 2-2.2z"/></svg>
+              <span>Nous appeler</span>
+              <span class="bouton-appel-numero" data-numero></span>
+            </a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="pied">
+      <div class="pied-inner">
+        <a class="logo logo--pied" href="index.html">
+          <img class="logo-marque" src="assets/images/marque/valmonte-logo-noir.png" width="1352" height="877" alt="Maison Valmonte, accueil" loading="lazy">
+        </a>
+        <p class="pied-devise">L'art de vivre durablement beau</p>
+        <nav class="pied-liens" aria-label="Liens de pied de page">
+          <a href="#maison">La Maison</a>
+          <a href="#contact">Contact</a>
+          <a href="#">Mentions légales</a>
+        </nav>
+      </div>
+    </footer>
+  </div>
+
+  <div class="menu-mobile" id="menu-mobile">
+    <div class="menu-mobile-tete">
+      <span class="logo logo--menu"><img class="logo-marque" src="assets/images/marque/valmonte-logo-noir.png" width="1352" height="877" alt="Maison Valmonte"></span>
+      <button class="bouton-icone" type="button" data-fermer-menu aria-label="Fermer le menu">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" aria-hidden="true"><path d="M5 5l14 14M19 5L5 19"/></svg>
+      </button>
+    </div>
+    <nav aria-label="Navigation mobile">
+      <ul>
+        <li><a href="#collection">Collection</a></li>
+        <li><a href="#univers">Catégories</a></li>
+        <li><a href="#maison">La Maison</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+    <p class="capitales">Des objets d'exception pour une vie plus belle.</p>
+  </div>
+
+  <!-- Zoom produit : rempli par main.js au clic sur une pièce -->
+  <div class="zoom" data-zoom hidden>
+    <div class="zoom-fond"></div>
+    <article class="zoom-panneau" role="dialog" aria-modal="true" aria-labelledby="zoom-titre">
+      <div class="zoom-visuel">
+        <img class="zoom-image" src="data:," alt="">
+        <span class="zoom-marque" aria-hidden="true"><img class="logo-marque" src="assets/images/marque/valmonte-logo-blanc.png" width="1352" height="877" alt=""></span>
+        <div class="zoom-vues" role="group" aria-label="Vues de la pièce" hidden></div>
+        <div class="zoom-legende">
+          <p class="zoom-surtitre"></p>
+          <h2 class="zoom-titre" id="zoom-titre"><span></span></h2>
+        </div>
+        <button class="zoom-fermer" type="button" aria-label="Fermer">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" aria-hidden="true"><path d="M5 5l14 14M19 5L5 19"/></svg>
+        </button>
+      </div>
+      <div class="zoom-infos">
+        <div class="zoom-infos-contenu">
+          <div class="zoom-texte">
+            <p class="zoom-description"></p>
+            <dl class="zoom-details"></dl>
+          </div>
+          <div class="zoom-achat">
+            <p class="zoom-prix"></p>
+            <button class="zoom-cta" type="button">Cet article m'intéresse</button>
+            <p class="zoom-note"></p>
+          </div>
+        </div>
+      </div>
+    </article>
+  </div>
+
+  <!-- Panier (la sélection) : s'ouvre depuis l'icône du sac, rempli par main.js -->
+  <div class="panier" data-panier hidden>
+    <div class="panier-fond" data-fermer-panier></div>
+    <aside class="panier-boite" role="dialog" aria-modal="true" aria-labelledby="panier-titre">
+      <div class="panier-tete">
+        <h2 class="panier-titre" id="panier-titre">Votre sélection</h2>
+        <span class="panier-compte" data-panier-compte></span>
+        <button class="bouton-icone panier-fermer" type="button" data-fermer-panier aria-label="Fermer la sélection">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" aria-hidden="true"><path d="M5 5l14 14M19 5L5 19"/></svg>
+        </button>
+      </div>
+      <ul class="panier-liste" data-panier-liste></ul>
+      <div class="panier-vide" data-panier-vide hidden>
+        <p>Votre sélection est vide.</p>
+        <a class="lien-trait" href="#collection" data-fermer-panier>Découvrir la collection</a>
+      </div>
+      <div class="panier-pied" data-panier-pied>
+        <p class="panier-total"><span>Total</span><strong data-panier-total></strong></p>
+        <p class="panier-note" data-panier-note></p>
+        <a class="panier-appel" href="#" data-appel>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" aria-hidden="true"><path d="M6.6 3.5h2.8l1.4 4.2-2 1.4a12.5 12.5 0 0 0 6.1 6.1l1.4-2 4.2 1.4v2.8a2 2 0 0 1-2.2 2A17 17 0 0 1 4.6 5.7a2 2 0 0 1 2-2.2z"/></svg>
+          <span>Appeler la maison</span>
+          <span class="panier-numero" data-numero></span>
+        </a>
+        <p class="panier-mention">Réservation, conseil et livraison : nous organisons tout avec vous par téléphone.</p>
+      </div>
+    </aside>
+  </div>
+
+  <div class="toast" role="status" aria-live="polite" data-toast></div>
+
+  <script src="assets/js/catalogue.js?v=10"></script>
+  <script src="assets/js/logo.js?v=10"></script>
+  <script src="assets/js/main.js?v=10"></script>
+</body>
+</html>
