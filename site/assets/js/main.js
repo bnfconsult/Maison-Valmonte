@@ -910,7 +910,7 @@
           var debutPiste = vw * 0.5 - W / 2;                         // le 1er univers commence au centre
           var finPiste = vw * 0.5 - ((n - 1) * (W + G) + W / 2);     // le dernier finit au centre
           var DEBUT_DEFILE = EFFACEMENT + 300;
-          var DUREE_DEFILE = 3500;
+          var DUREE_DEFILE = 5000;
           anim(defile, [{ opacity: 0 }, { opacity: 1 }], { duration: 600, delay: DEBUT_DEFILE, easing: 'ease', fill: 'both' });
           anim(piste, [{ transform: 'translateX(' + debutPiste + 'px)' }, { transform: 'translateX(' + finPiste + 'px)' }],
             { duration: DUREE_DEFILE, delay: DEBUT_DEFILE, easing: 'cubic-bezier(.4,0,.3,1)', fill: 'both' });
