@@ -596,7 +596,7 @@ main section[id] { scroll-margin-top: var(--h-entete); }
   position: absolute; inset: 0;
   width: 100%; height: 100%;
   object-fit: cover;
-  object-position: center 18%;
+  object-position: center;
 }
 .maison-contenu {
   display: flex; flex-direction: column; align-items: flex-start; justify-content: center;
